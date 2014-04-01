@@ -203,7 +203,8 @@ CBUUID *writeCharacteristicUUID;
 #if TARGET_OS_IPHONE
     redBearLabsServiceUUID = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
     adafruitServiceUUID = [CBUUID UUIDWithString:@ADAFRUIT_SERVICE_UUID];
-    NSArray *services = @[redBearLabsServiceUUID, adafruitServiceUUID];
+    blueShieldServiceUUID = [CBUUID UUIDWithString:@BLUESHIELD_SERVICE_UUID];
+    NSArray *services = @[redBearLabsServiceUUID, adafruitServiceUUID, blueShieldServiceUUID];
     [self.CM scanForPeripheralsWithServices:services options: nil];
 #else
     [self.CM scanForPeripheralsWithServices:nil options:nil]; // Start scanning
@@ -527,6 +528,12 @@ static bool done = false;
                 serialServiceUUID = adafruitServiceUUID;
                 readCharacteristicUUID = [CBUUID UUIDWithString:@ADAFRUIT_CHAR_TX_UUID];
                 writeCharacteristicUUID = [CBUUID UUIDWithString:@ADAFRUIT_CHAR_RX_UUID];
+                break;
+            } else if ([service.UUID isEqual:blueShieldServiceUUID]) {
+                NSLog(@"BlueShield");
+                serialServiceUUID = blueShieldServiceUUID;
+                readCharacteristicUUID = [CBUUID UUIDWithString:@BLUESHIELD_CHAR_TX_UUID];
+                writeCharacteristicUUID = [CBUUID UUIDWithString:@BLUESHIELD_CHAR_RX_UUID];
                 break;
             } else {
                 // ignore unknown services
