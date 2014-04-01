@@ -27,6 +27,7 @@ static int rssi = 0;
 // TODO should have a configurable list of services
 CBUUID *redBearLabsServiceUUID;
 CBUUID *adafruitServiceUUID;
+CBUUID *blueShieldServiceUUID;
 CBUUID *serialServiceUUID;
 CBUUID *readCharacteristicUUID;
 CBUUID *writeCharacteristicUUID;
