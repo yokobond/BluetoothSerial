@@ -174,7 +174,7 @@ CBUUID *writeCharacteristicUUID;
         return;
     }
     
-    [p writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
+    [p writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
 }
 
 -(UInt16) swap:(UInt16)s
