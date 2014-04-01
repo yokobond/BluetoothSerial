@@ -97,6 +97,7 @@
 }
 
 - (void)write:(CDVInvokedUrlCommand*)command {
+    [self.commandDelegate runInBackground:^{
     NSLog(@"write");
     
     CDVPluginResult *pluginResult = nil;
@@ -113,6 +114,7 @@
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"message was null"];
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
 }
 
 - (void)list:(CDVInvokedUrlCommand*)command {
