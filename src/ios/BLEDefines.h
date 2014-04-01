@@ -23,4 +23,10 @@
 #define ADAFRUIT_CHAR_TX_UUID                         "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 #define ADAFRUIT_CHAR_RX_UUID                         "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 
+// BlueShield
+// https://github.com/volca/BlueShieldFramework
+#define BLUESHIELD_SERVICE_UUID                         "D3E60000-8F36-40D6-B2D5-C5D9F5E81869"
+#define BLUESHIELD_CHAR_TX_UUID                         "D3E60004-8F36-40D6-B2D5-C5D9F5E81869"
+#define BLUESHIELD_CHAR_RX_UUID                         "D3E60005-8F36-40D6-B2D5-C5D9F5E81869"
+
 #define RBL_BLE_FRAMEWORK_VER                    0x0200
